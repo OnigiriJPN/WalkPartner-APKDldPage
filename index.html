@@ -81,6 +81,7 @@ function CancelUI(){
         if (adsBlockDetector.check()) {
           alert("広告ブロッカーを検出された可能性があります。広告ブロッカーを使用していないか確認するか、リロードをしてください。");
           document.querySelector("dialog").showModal();
+          document.querySelector("main").style.display = "block";
         } else {
           if (document.querySelector("dialog").open){
             document.querySelector("dialog").close();
