@@ -48,10 +48,36 @@
         <button onclick="openGitHub()">ダウンロード</button>
         <p>バージョン: 1.1-beta</p>
      </main>
+    <dialog>
+<h1> このウェブサイトに広告が表示されていないようです。 </h1>
+      <p> 何らかの理由で、広告が表示されていません。広告ブロッカーを使用していませんか？　</p>
+
+      <button onclick="reloadUI">もう一度リロードする🔂</button>
+    </dialog>
     <script>
           function openGitHub(){
             window.open("https://github.com/OnigiriJPN/WalkPartner-APKDldPage/releases","newtab");
           }
+function reloadUI(){
+  window.location.reload();
+}
+
         </script>
+    <script type="module">
+      import adsDetector from "https://unpkg.com/adsblock-detector@1.0.4/dist/build.js";
+      let adsBlockDetector = new adsDetector();
+      window.addEventListener("DOMContentLoaded", () => {
+        if (adsBlockDetector.check()) {
+          alert("広告ブロッカーを検出されました。広告ブロッカーを外してください。");
+          document.querySelector("dialog").showModal();
+        } else {
+          if (document.querySelector("dialog").open){
+            document.querySelector("dialog").close();
+          } else {
+            return;
+          }
+        }
+      });
+    </script>
   </body>
 </html>
