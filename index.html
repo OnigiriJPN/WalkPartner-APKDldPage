@@ -59,6 +59,7 @@
       <p> 何らかの理由で、広告が表示されていません。広告ブロッカーを使用していませんか？　</p>
 
       <button onclick="reloadUI()">もう一度リロードする🔂</button>
+      <button onclick="CancelUI()">スキップ</button>
     </dialog>
     <script>
           function openGitHub(){
@@ -67,6 +68,10 @@
 function reloadUI(){
   window.location.reload();
 }
+function CancelUI(){
+ document.querySelector("dialog").close();
+}
+
 
         </script>
     <script type="module">
