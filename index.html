@@ -68,7 +68,7 @@ function reloadUI(){
       let adsBlockDetector = new adsDetector();
       window.addEventListener("DOMContentLoaded", () => {
         if (adsBlockDetector.check()) {
-          alert("広告ブロッカーを検出されました。広告ブロッカーを外してください。");
+          alert("広告ブロッカーを検出された可能性があります。広告ブロッカーを使用していないか確認するか、リロードをしてください。");
           document.querySelector("dialog").showModal();
         } else {
           if (document.querySelector("dialog").open){
